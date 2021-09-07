@@ -35,17 +35,60 @@ namespace ShootingDice
             SmackTalkingPlayer player5 = new SmackTalkingPlayer();
             player5.Name = "Cut Throat Jenkins";
             player5.Taunt = "You rollin garbage, man!";
-           
-
+        
             player5.Play(large);
 
             Console.WriteLine("-------------------");
 
+            OneHigherPlayer player6 = new OneHigherPlayer();
+            player6.Name = "Slick Rick";
+
+            player6.Play(player5);
+
+            Console.WriteLine("-------------------");
+
+            HumanPlayer player7 = new HumanPlayer();
+            player7.Name = "Meat Bag";
+
+            player7.Play(player6);
+
+            Console.WriteLine("-------------------");
+
+            CreativeSmackTalkingPlayer player8 = new CreativeSmackTalkingPlayer();
+            player8.Name = "Leroy Jenkins!";
+            player8.Taunt = "blah blah";
+
+            player8.Play(player7);
+
+            Console.WriteLine("-------------------");
+
+            SoreLoserPlayer player9 = new SoreLoserPlayer();
+            player9.Name = "Big ol'Baby";
+
+            player9.Play(player8);
+
+             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                player1, player2, player3, large, player5, player6, player7, player8, player9
             };
+
             
+            // Taunt blahBlah = new Taunt(@"blah blah");
+            // Taunt blahBlah2 = new Taunt(@"blah2 blah2");
+            // Taunt blahBlah3 = new Taunt(@"blah3 blah3");
+            
+            // List<Taunt> taunts = new List<Taunt>()
+            // {
+            //  blahBlah,
+            //  blahBlah2,
+            //  blahBlah3
+            // }; 
+
+
+            // var randomTaunt = new Random();
+            // var randomizedTaunts = taunts.OrderBy(taunt => randomTaunt.Next());
+            // var tauntPack5 = randomizedTaunts.Take(1);
 
             PlayMany(players);
         }

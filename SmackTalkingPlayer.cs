@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace ShootingDice
@@ -12,7 +13,7 @@ namespace ShootingDice
 
      public override int Roll()
        {
-           Console.WriteLine($"{Name} says '{Taunt}'");
+           Console.WriteLine($"{Name} says {Taunt}");
            return new Random().Next(DiceSize) + 1;
        }
     }
